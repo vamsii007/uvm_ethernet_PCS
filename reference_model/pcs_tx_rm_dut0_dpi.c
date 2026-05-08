@@ -26,6 +26,10 @@
 #include <stdbool.h>
 #include <string.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #ifndef PCS_TX_RM_API
 #define PCS_TX_RM_API
 
@@ -60,6 +64,18 @@ typedef enum {
     PCS_COND_ESD2_EXT_2,
     PCS_COND_ESD_EXT_ERR
 } pcs_symbol_condition_t;
+
+typedef enum {
+    PCS_DUT0_ST_RESET = 0,
+    PCS_DUT0_ST_SEND_IDLE,
+    PCS_DUT0_ST_SDD1,
+    PCS_DUT0_ST_SDD2,
+    PCS_DUT0_ST_TRANSMIT_DATA,
+    PCS_DUT0_ST_CSR1,
+    PCS_DUT0_ST_CSR2,
+    PCS_DUT0_ST_ESD1,
+    PCS_DUT0_ST_ESD2
+} pcs_dut0_state_t;
 
 typedef struct {
     bool tx_enable;
@@ -132,6 +148,13 @@ typedef struct {
     uint64_t n;
     uint64_t n0;
     bool advance_scrambler_before_use;
+
+    /* DUTS26_0 compatibility state.  These fields model the professor DUT's
+     * wrapper/FSM behavior, not only the IEEE core equations.
+     */
+    uint8_t dut0_state;        /* pcs_dut0_state_t stored as byte for C ABI stability */
+    uint8_t tx_enable_pipe;    /* DUT tx_enable[4:0], bit0 is newest registered sample */
+    bool oe;                   /* DUT OE toggle used by Sc[3:1] generation */
 } pcs_tx_state_t;
 
 typedef struct {
@@ -1278,7 +1301,7 @@ void pcs_tx_default_init_cfg(pcs_tx_init_cfg_t *cfg)
     cfg->tx_error_d3_init = false;
     cfg->n_init = 0;
     cfg->n0_init = 0;
-    cfg->advance_scrambler_before_use = true;
+    cfg->advance_scrambler_before_use = false;
 }
 
 void pcs_tx_init_state(pcs_tx_state_t *s, const pcs_tx_init_cfg_t *cfg)
@@ -1299,6 +1322,13 @@ void pcs_tx_init_state(pcs_tx_state_t *s, const pcs_tx_init_cfg_t *cfg)
     s->n = cfg->n_init;
     s->n0 = cfg->n0_init;
     s->advance_scrambler_before_use = cfg->advance_scrambler_before_use;
+
+    s->dut0_state = PCS_DUT0_ST_RESET;
+    s->tx_enable_pipe = ((cfg->tx_enable_d4_init ? 1U : 0U) << 4) |
+                        ((cfg->tx_enable_d3_init ? 1U : 0U) << 3) |
+                        ((cfg->tx_enable_d2_init ? 1U : 0U) << 2) |
+                        ((cfg->tx_enable_d1_init ? 1U : 0U) << 1);
+    s->oe = true;
 }
 
 void pcs_tx_step(pcs_tx_state_t *s, const pcs_tx_in_t *in, pcs_tx_out_t *out)
@@ -1365,6 +1395,276 @@ void pcs_tx_step(pcs_tx_state_t *s, const pcs_tx_in_t *in, pcs_tx_out_t *out)
     s->n++;
 }
 
+
+/* -------------------------------------------------------------------------
+ * DUTS26_0-compatible wrapper model
+ *
+ * The professor DUT is not a pure Clause-40 PCS core.  It has only Din[7:0]
+ * and TX_EN at the top level, has a small internal delimiter FSM, uses the
+ * MASTER scrambler seeded to 33'h1, uses the stored Scr value before advancing,
+ * toggles OE for Sc[3:1], and packs each PAM5 symbol as 3-bit two's complement.
+ *
+ * This function models behavior, but it is intentionally written independently
+ * from the DUT source structure so the reference model remains original work.
+ * ------------------------------------------------------------------------- */
+
+static uint8_t pcs_dut0_make_sc(const pcs_tx_state_t *s, uint8_t sx, uint8_t sy)
+{
+    bool txe2 = ((s->tx_enable_pipe >> 2) & 1U) != 0;
+    uint8_t sc = 0;
+
+    if (txe2) {
+        sc |= (uint8_t)((sx & 0xF) << 4);
+    }
+
+    if (!s->oe) {
+        sc |= (uint8_t)(sy & 0xE);
+    } else {
+        sc |= (uint8_t)((~s->sy_prev) & 0xE);
+    }
+
+    sc |= (uint8_t)(sy & 0x1);
+    return sc;
+}
+
+static uint16_t pcs_dut0_make_sd_and_cs(const pcs_tx_state_t *s,
+                                        uint8_t din,
+                                        uint8_t sc,
+                                        bool csreset,
+                                        uint8_t *cs_next)
+{
+    bool txe2 = ((s->tx_enable_pipe >> 2) & 1U) != 0;
+    uint8_t old_cs = s->cs & 0x7;
+    uint16_t sd = 0;
+
+    uint8_t sd7;
+    uint8_t sd6;
+
+    if (!csreset && txe2) {
+        sd7 = bit_u8(sc, 7) ^ bit_u8(din, 7);
+        sd6 = bit_u8(sc, 6) ^ bit_u8(din, 6);
+    } else if (csreset) {
+        /* Match DUTS26_0 behavior: both Sd[7] and Sd[6] use CSnm1[1]. */
+        sd7 = bit_u8(old_cs, 1);
+        sd6 = bit_u8(old_cs, 1);
+    } else {
+        sd7 = bit_u8(sc, 7);
+        sd6 = bit_u8(sc, 6);
+    }
+
+    uint8_t cs = 0;
+    cs |= (uint8_t)(bit_u8(old_cs, 2) << 0);
+    if (txe2) {
+        cs |= (uint8_t)((sd6 ^ bit_u8(old_cs, 1)) << 1);
+        cs |= (uint8_t)((sd7 ^ bit_u8(din, 7)) << 2);
+    }
+    cs &= 0x7;
+
+    sd |= (uint16_t)bit_u8(cs, 0) << 8;
+    sd |= (uint16_t)sd7 << 7;
+    sd |= (uint16_t)sd6 << 6;
+
+    if (txe2) {
+        sd |= (uint16_t)(bit_u8(sc, 5) ^ bit_u8(din, 5)) << 5;
+        sd |= (uint16_t)(bit_u8(sc, 4) ^ bit_u8(din, 4)) << 4;
+        sd |= (uint16_t)(bit_u8(sc, 3) ^ bit_u8(din, 3)) << 3;
+        sd |= (uint16_t)(bit_u8(sc, 2) ^ bit_u8(din, 2)) << 2;
+        sd |= (uint16_t)(bit_u8(sc, 1) ^ bit_u8(din, 1)) << 1;
+    } else {
+        sd |= (uint16_t)bit_u8(sc, 5) << 5;
+        sd |= (uint16_t)bit_u8(sc, 4) << 4;
+        sd |= (uint16_t)bit_u8(sc, 3) << 3;
+        sd |= (uint16_t)bit_u8(sc, 2) << 2;
+        sd |= (uint16_t)(bit_u8(sc, 1) ^ 1U) << 1;
+    }
+
+    if ((bit_u8(sc, 0) ^ (uint8_t)txe2) != 0U) {
+        sd |= (uint16_t)bit_u8(din, 0);
+    }
+
+    *cs_next = cs;
+    return sd & 0x1FF;
+}
+
+static pcs_symbol_condition_t pcs_dut0_select_condition(const pcs_tx_state_t *s,
+                                                        bool tx_en,
+                                                        bool *csreset,
+                                                        uint8_t *next_state)
+{
+    *csreset = false;
+    *next_state = s->dut0_state;
+
+    switch ((pcs_dut0_state_t)s->dut0_state) {
+    case PCS_DUT0_ST_RESET:
+        *next_state = PCS_DUT0_ST_SEND_IDLE;
+        return PCS_COND_IDLE_CARR_EXT;
+
+    case PCS_DUT0_ST_SEND_IDLE:
+        if (tx_en) {
+            *next_state = PCS_DUT0_ST_SDD2;
+            return PCS_COND_SSD1;
+        }
+        return PCS_COND_IDLE_CARR_EXT;
+
+    case PCS_DUT0_ST_SDD1:
+        *next_state = PCS_DUT0_ST_SDD2;
+        return PCS_COND_SSD1;
+
+    case PCS_DUT0_ST_SDD2:
+        *next_state = PCS_DUT0_ST_TRANSMIT_DATA;
+        return PCS_COND_SSD2;
+
+    case PCS_DUT0_ST_TRANSMIT_DATA:
+        if (tx_en) {
+            return PCS_COND_NORMAL;
+        }
+        *csreset = true;
+        *next_state = PCS_DUT0_ST_CSR2;
+        return PCS_COND_CSRESET;
+
+    case PCS_DUT0_ST_CSR2:
+        *csreset = true;
+        *next_state = PCS_DUT0_ST_ESD1;
+        return PCS_COND_CSRESET;
+
+    case PCS_DUT0_ST_ESD1:
+        *next_state = PCS_DUT0_ST_ESD2;
+        return PCS_COND_ESD1;
+
+    case PCS_DUT0_ST_ESD2:
+        *next_state = PCS_DUT0_ST_SEND_IDLE;
+        return PCS_COND_ESD2_EXT_0;
+
+    case PCS_DUT0_ST_CSR1:
+    default:
+        *next_state = PCS_DUT0_ST_SEND_IDLE;
+        return PCS_COND_IDLE_CARR_EXT;
+    }
+}
+
+void pcs_dut0_reset(pcs_tx_state_t *s)
+{
+    pcs_tx_init_cfg_t cfg;
+    pcs_tx_default_init_cfg(&cfg);
+    cfg.role = PCS_ROLE_MASTER;
+    cfg.scr_init_33 = 0x1ULL;
+    cfg.cs_init = 0;
+    cfg.sd_prev_init = 0;
+    cfg.sy_prev_init = 0;
+    cfg.tx_enable_d1_init = false;
+    cfg.tx_enable_d2_init = false;
+    cfg.tx_enable_d3_init = false;
+    cfg.tx_enable_d4_init = false;
+    cfg.tx_error_d1_init = false;
+    cfg.tx_error_d2_init = false;
+    cfg.tx_error_d3_init = false;
+    cfg.n_init = 0;
+    cfg.n0_init = 0;
+    cfg.advance_scrambler_before_use = false;
+    pcs_tx_init_state(s, &cfg);
+
+    s->dut0_state = PCS_DUT0_ST_RESET;
+    s->tx_enable_pipe = 0;
+    s->oe = true;
+}
+
+void pcs_dut0_step(pcs_tx_state_t *s, uint8_t din, bool tx_en, pcs_tx_out_t *out)
+{
+    memset(out, 0, sizeof(*out));
+
+    uint64_t scr_for_use = s->scr & PCS_SCR_MASK_33;
+    uint8_t sy = pcs_gen_sy(scr_for_use);
+    uint8_t sx = pcs_gen_sx(scr_for_use);
+    uint8_t sg = pcs_gen_sg(scr_for_use);
+    uint8_t sc = pcs_dut0_make_sc(s, sx, sy);
+
+    bool csreset;
+    uint8_t next_state;
+    pcs_symbol_condition_t cond = pcs_dut0_select_condition(s, tx_en, &csreset, &next_state);
+
+    uint8_t cs_next;
+    uint16_t sd = pcs_dut0_make_sd_and_cs(s, din, sc, csreset, &cs_next);
+
+    int8_t ta, tb, tc, td;
+    pcs_lookup_base_symbols(cond, sd, &ta, &tb, &tc, &td);
+
+    bool srev = ((((s->tx_enable_pipe >> 4) ^ (s->tx_enable_pipe >> 2)) & 1U) != 0U);
+    int8_t sna = ((bit_u8(sg, 0) ^ (uint8_t)srev) == 0U) ? +1 : -1;
+    int8_t snb = ((bit_u8(sg, 1) ^ (uint8_t)srev) == 0U) ? +1 : -1;
+    int8_t snc = ((bit_u8(sg, 2) ^ (uint8_t)srev) == 0U) ? +1 : -1;
+    int8_t snd = ((bit_u8(sg, 3) ^ (uint8_t)srev) == 0U) ? +1 : -1;
+
+    out->ta = ta; out->tb = tb; out->tc = tc; out->td = td;
+    out->a = (int8_t)(ta * sna);
+    out->b = (int8_t)(tb * snb);
+    out->c = (int8_t)(tc * snc);
+    out->d = (int8_t)(td * snd);
+    out->packed12_tc3 = pcs_pack12_tc3(out->a, out->b, out->c, out->d);
+    out->sx = sx; out->sy = sy; out->sg = sg;
+    out->sc = sc;
+    out->sd = sd;
+    out->cs = cs_next;
+    out->csreset = csreset;
+    out->srev = srev;
+    out->condition = cond;
+
+    s->scr = pcs_scrambler_advance(s->scr, PCS_ROLE_MASTER);
+    s->sy_prev = sy & 0xF;
+    s->cs = cs_next & 0x7;
+    s->sd_prev = sd & 0x1FF;
+    s->dut0_state = next_state;
+    s->tx_enable_pipe = (uint8_t)(((s->tx_enable_pipe << 1) | (tx_en ? 1U : 0U)) & 0x1F);
+    s->oe = !s->oe;
+
+    s->tx_enable_d1 = (s->tx_enable_pipe & 0x01U) != 0;
+    s->tx_enable_d2 = (s->tx_enable_pipe & 0x02U) != 0;
+    s->tx_enable_d3 = (s->tx_enable_pipe & 0x04U) != 0;
+    s->tx_enable_d4 = (s->tx_enable_pipe & 0x08U) != 0;
+    s->n++;
+}
+
+/* DPI-C convenience API for a single-scoreboard/single-DUT use case. */
+static pcs_tx_state_t pcs_dpi_dut0_state;
+static bool pcs_dpi_dut0_is_initialized = false;
+
+void pcs_dpi_dut0_reset(void)
+{
+    pcs_dut0_reset(&pcs_dpi_dut0_state);
+    pcs_dpi_dut0_is_initialized = true;
+}
+
+uint32_t pcs_dpi_dut0_step(uint32_t din, uint32_t tx_en)
+{
+    if (!pcs_dpi_dut0_is_initialized) {
+        pcs_dpi_dut0_reset();
+    }
+
+    pcs_tx_out_t out;
+    pcs_dut0_step(&pcs_dpi_dut0_state, (uint8_t)(din & 0xFFU), tx_en != 0U, &out);
+    return (uint32_t)(out.packed12_tc3 & 0x0FFFU);
+}
+
+void pcs_dpi_dut0_step_debug(uint32_t din, uint32_t tx_en,
+                             uint32_t *dout12,
+                             uint32_t *sc,
+                             uint32_t *sd,
+                             uint32_t *condition,
+                             uint32_t *state)
+{
+    if (!pcs_dpi_dut0_is_initialized) {
+        pcs_dpi_dut0_reset();
+    }
+
+    pcs_tx_out_t out;
+    pcs_dut0_step(&pcs_dpi_dut0_state, (uint8_t)(din & 0xFFU), tx_en != 0U, &out);
+
+    if (dout12)    *dout12 = (uint32_t)(out.packed12_tc3 & 0x0FFFU);
+    if (sc)        *sc = (uint32_t)(out.sc & 0xFFU);
+    if (sd)        *sd = (uint32_t)(out.sd & 0x1FFU);
+    if (condition) *condition = (uint32_t)out.condition;
+    if (state)     *state = (uint32_t)pcs_dpi_dut0_state.dut0_state;
+}
+
 void pcs_cmd_decode_table_init_default(pcs_cmd_decode_table_t *t)
 {
     memset(t, 0, sizeof(*t));
@@ -1418,3 +1718,7 @@ bool pcs_project9_step(pcs_tx_state_t *s, uint16_t in9,
     pcs_tx_step(s, &spec_in, out);
     return true;
 }
+
+#ifdef __cplusplus
+}
+#endif
