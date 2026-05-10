@@ -1,7 +1,5 @@
 import uvm_pkg::*;
  `include "uvm_macros.svh"
- `include "pcs_if.sv"
- `include "pcs_monitem.sv"
 
 class pcs_monitor extends uvm_monitor;
  `uvm_component_utils(pcs_monitor)
@@ -11,7 +9,7 @@ virtual pcs_if vif;
 uvm_analysis_port#(pcs_monitem) mon_ap;
 
 
-function new(string name= pcs_monitor, uvm_component parent= null);
+function new(string name= "pcs_monitor", uvm_component parent= null);
  super.new(name,parent);
  mon_ap=new("mon_ap", this);
 endfunction
@@ -26,15 +24,19 @@ function void build_phase(uvm_phase phase);
 endfunction
 
 virtual task run_phase(uvm_phase phase);
- super.run_phase(phase);
   pcs_monitem monitem;
+
+  super.run_phase(phase);
+
   forever begin
-     @(vif.mon_cb);
+    @(posedge vif.Clk);
 
-     monitem.rst_n=vif.cb_mon.rst_n;
-     monitem.enc_in=vif.cb_mon.enc_in;
-     monitem.enc_out=vif.cb_mon.enc_out;
+    monitem = pcs_monitem::type_id::create("monitem");
 
+    monitem.rst_n = vif.rst_n;
+    monitem.Din   = vif.Din;
+    monitem.TX_EN = vif.TX_EN;
+    monitem.Dout  = vif.Dout;
     mon_ap.write(monitem);
   end
 endtask

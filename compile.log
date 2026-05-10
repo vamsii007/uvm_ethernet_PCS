@@ -1,0 +1,469 @@
+Command: vcs -sverilog -ntb_opts uvm -timescale=1ns/1ps +incdir+TB +incdir+reference_model \
+TB/top.sv reference_model/pcs_tx_rm_dut0_dpi.c -CFLAGS -std=c99 -debug_access+all \
+-l compile.log
+                         Chronologic VCS (TM)
+         Version U-2023.03-SP2-8 -- Sat May  9 18:51:18 2026
+
+                    Copyright (c) 1991 - 2024 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Parsing design file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/uvm_pkg.sv'
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/uvm_macros.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/macros/uvm_version_defines.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/uvm_macros.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/macros/snps_macros.svp'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/uvm_macros.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/macros/uvm_message_defines.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/uvm_macros.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/macros/uvm_phase_defines.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/uvm_macros.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/macros/uvm_object_defines.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/uvm_macros.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/macros/uvm_printer_defines.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/uvm_macros.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/macros/uvm_tlm_defines.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/tlm1/uvm_tlm_imps.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/macros/uvm_tlm_defines.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/uvm_macros.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/macros/uvm_sequence_defines.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/uvm_macros.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/macros/uvm_callback_defines.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/uvm_macros.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/macros/uvm_reg_defines.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/uvm_macros.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/macros/uvm_deprecated_defines.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/uvm_macros.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/uvm_pkg.sv'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/directc/uvm_directc.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/directc/uvm_seed.vh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/directc/uvm_directc.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/uvm_pkg.sv'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/dpi/uvm_dpi.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/dpi/uvm_hdl.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/dpi/uvm_dpi.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/dpi/uvm_svcmd_dpi.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/dpi/uvm_dpi.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/dpi/uvm_regex.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/dpi/uvm_dpi.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/uvm_pkg.sv'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_version.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_object_globals.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_misc.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_object.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_pool.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_queue.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_factory.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_registry.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_spell_chkr.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_resource.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/deprecated/uvm_resource_converter.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_resource_specializations.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_resource_db.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_config_db.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_printer.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_comparer.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_packer.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_recorder.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_event_callback.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_event.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_barrier.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_callback.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/uvm_macros.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_callback.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_report_catcher.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_report_server.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_report_handler.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_report_object.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_transaction.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_phase.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_domain.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_bottomup_phase.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_topdown_phase.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_task_phase.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_common_phases.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_runtime_phases.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_component.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_root.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_component.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_objection.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_heartbeat.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_globals.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_cmdline_processor.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_base.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/uvm_pkg.sv'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/tlm1/uvm_tlm.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/tlm1/uvm_tlm_ifs.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/tlm1/uvm_tlm.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/tlm1/uvm_sqr_ifs.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/tlm1/uvm_tlm.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/base/uvm_port_base.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/tlm1/uvm_tlm.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/tlm1/uvm_tlm_imps.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/tlm1/uvm_tlm.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/tlm1/uvm_imps.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/tlm1/uvm_tlm.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/tlm1/uvm_ports.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/tlm1/uvm_tlm.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/tlm1/uvm_exports.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/tlm1/uvm_tlm.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/tlm1/uvm_analysis_port.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/tlm1/uvm_tlm.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/tlm1/uvm_tlm_fifo_base.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/tlm1/uvm_tlm.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/tlm1/uvm_tlm_fifos.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/tlm1/uvm_tlm.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/tlm1/uvm_tlm_req_rsp.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/tlm1/uvm_tlm.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/tlm1/uvm_sqr_connections.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/tlm1/uvm_tlm.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/uvm_pkg.sv'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/comps/uvm_comps.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/comps/uvm_pair.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/comps/uvm_comps.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/comps/uvm_policies.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/comps/uvm_comps.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/comps/uvm_in_order_comparator.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/comps/uvm_comps.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/comps/uvm_algorithmic_comparator.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/comps/uvm_comps.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/comps/uvm_random_stimulus.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/comps/uvm_comps.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/comps/uvm_subscriber.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/comps/uvm_comps.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/comps/uvm_monitor.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/comps/uvm_comps.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/comps/uvm_driver.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/comps/uvm_comps.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/comps/uvm_push_driver.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/comps/uvm_comps.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/comps/uvm_scoreboard.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/comps/uvm_comps.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/comps/uvm_agent.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/comps/uvm_comps.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/comps/uvm_env.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/comps/uvm_comps.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/comps/uvm_test.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/comps/uvm_comps.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/uvm_pkg.sv'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/seq/uvm_seq.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/seq/uvm_sequence_item.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/seq/uvm_seq.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/seq/uvm_sequencer_base.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/seq/uvm_seq.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/seq/uvm_sequencer_analysis_fifo.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/seq/uvm_seq.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/seq/uvm_sequencer_param_base.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/seq/uvm_seq.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/seq/uvm_sequencer.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/seq/uvm_seq.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/seq/uvm_push_sequencer.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/seq/uvm_seq.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/seq/uvm_sequence_base.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/seq/uvm_seq.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/seq/uvm_sequence.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/seq/uvm_seq.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/seq/uvm_sequence_library.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/seq/uvm_seq.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/seq/uvm_sequence_builtin.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/seq/uvm_seq.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/uvm_pkg.sv'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/tlm2/uvm_tlm2.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/tlm2/uvm_tlm2_defines.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/tlm2/uvm_tlm2.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/tlm2/uvm_tlm2_time.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/tlm2/uvm_tlm2.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/tlm2/uvm_tlm2_generic_payload.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/tlm2/uvm_tlm2.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/tlm2/uvm_tlm2_ifs.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/tlm2/uvm_tlm2.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/tlm2/uvm_tlm2_imps.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/tlm2/uvm_tlm2.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/tlm2/uvm_tlm2_ports.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/tlm2/uvm_tlm2.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/tlm2/uvm_tlm2_exports.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/tlm2/uvm_tlm2.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/tlm2/uvm_tlm2_sockets_base.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/tlm2/uvm_tlm2.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/tlm2/uvm_tlm2_sockets.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/tlm2/uvm_tlm2.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/uvm_pkg.sv'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/uvm_reg_item.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/uvm_reg_adapter.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/uvm_reg_predictor.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/uvm_reg_sequence.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/uvm_reg_cbs.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/uvm_reg_backdoor.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/uvm_reg_field.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/uvm_vreg_field.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/uvm_reg.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/uvm_reg_indirect.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/uvm_reg_fifo.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/uvm_reg_file.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/uvm_mem_mam.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/uvm_vreg.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/uvm_mem.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/uvm_reg_map.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/uvm_reg_block.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/sequences/uvm_reg_hw_reset_seq.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/sequences/uvm_reg_bit_bash_seq.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/sequences/uvm_mem_walk_seq.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/sequences/uvm_mem_access_seq.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/sequences/uvm_reg_access_seq.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/sequences/uvm_reg_mem_shared_access_seq.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/sequences/uvm_reg_mem_built_in_seq.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/sequences/uvm_reg_mem_hdl_paths_seq.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/snps_uvm_reg_bank.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/reg/uvm_reg_model.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/uvm_pkg.sv'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/vcs/vcs_uvm_alt.sv'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/uvm_pkg.sv'.
+Parsing design file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/vcs/uvm_custom_install_vcs_recorder.sv'
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/vcs/msglog.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/vcs/uvm_custom_install_vcs_recorder.sv'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/vcs/uvm_msglog_report_server.sv'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/vcs/uvm_custom_install_vcs_recorder.sv'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/vcs/uvm_vcs_recorder.svh'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/vcs/uvm_custom_install_vcs_recorder.sv'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/vcs/uvm_vcs_record_interface.sv'.
+Back to file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/vcs/uvm_custom_install_vcs_recorder.sv'.
+Parsing design file 'TB/top.sv'
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/uvm_macros.svh'.
+Back to file 'TB/top.sv'.
+Parsing included file 'TB/../dut/dut.sv'.
+Back to file 'TB/top.sv'.
+Parsing included file 'TB/../reference_model/pcs_tx_rm_dpi_pkg.sv'.
+Back to file 'TB/top.sv'.
+Parsing included file 'TB/pcs_if.sv'.
+Back to file 'TB/top.sv'.
+Parsing included file 'TB/pcs_item.sv'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/uvm_macros.svh'.
+Back to file 'TB/pcs_item.sv'.
+
+Note-[SV-LCM-PPWI] Package previously wildcard imported
+TB/pcs_item.sv, 3
+$unit
+  Package 'uvm_pkg' already wildcard imported. 
+  Ignoring uvm_pkg::*
+  See the SystemVerilog LRM(1800-2005), section 19.2.1.
+
+Back to file 'TB/top.sv'.
+Parsing included file 'TB/pcs_monitem.sv'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/uvm_macros.svh'.
+Back to file 'TB/pcs_monitem.sv'.
+
+Note-[SV-LCM-PPWI] Package previously wildcard imported
+TB/pcs_monitem.sv, 2
+$unit
+  Package 'uvm_pkg' already wildcard imported. 
+  Ignoring uvm_pkg::*
+  See the SystemVerilog LRM(1800-2005), section 19.2.1.
+
+Back to file 'TB/top.sv'.
+Parsing included file 'TB/pcs_sequencer.sv'.
+
+Note-[SV-LCM-PPWI] Package previously wildcard imported
+TB/pcs_sequencer.sv, 1
+$unit
+  Package 'uvm_pkg' already wildcard imported. 
+  Ignoring uvm_pkg::*
+  See the SystemVerilog LRM(1800-2005), section 19.2.1.
+
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/uvm_macros.svh'.
+Back to file 'TB/pcs_sequencer.sv'.
+Back to file 'TB/top.sv'.
+Parsing included file 'TB/pcs_driver.sv'.
+
+Note-[SV-LCM-PPWI] Package previously wildcard imported
+TB/pcs_driver.sv, 1
+$unit
+  Package 'uvm_pkg' already wildcard imported. 
+  Ignoring uvm_pkg::*
+  See the SystemVerilog LRM(1800-2005), section 19.2.1.
+
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/uvm_macros.svh'.
+Back to file 'TB/pcs_driver.sv'.
+Back to file 'TB/top.sv'.
+Parsing included file 'TB/pcs_monitor.sv'.
+
+Note-[SV-LCM-PPWI] Package previously wildcard imported
+TB/pcs_monitor.sv, 1
+$unit
+  Package 'uvm_pkg' already wildcard imported. 
+  Ignoring uvm_pkg::*
+  See the SystemVerilog LRM(1800-2005), section 19.2.1.
+
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/uvm_macros.svh'.
+Back to file 'TB/pcs_monitor.sv'.
+Back to file 'TB/top.sv'.
+Parsing included file 'TB/pcs_scoreboard.sv'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/uvm_macros.svh'.
+Back to file 'TB/pcs_scoreboard.sv'.
+
+Note-[SV-LCM-PPWI] Package previously wildcard imported
+TB/pcs_scoreboard.sv, 3
+$unit
+  Package 'uvm_pkg' already wildcard imported. 
+  Ignoring uvm_pkg::*
+  See the SystemVerilog LRM(1800-2005), section 19.2.1.
+
+Back to file 'TB/top.sv'.
+Parsing included file 'TB/pcs_agent.sv'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/uvm_macros.svh'.
+Back to file 'TB/pcs_agent.sv'.
+
+Note-[SV-LCM-PPWI] Package previously wildcard imported
+TB/pcs_agent.sv, 3
+$unit
+  Package 'uvm_pkg' already wildcard imported. 
+  Ignoring uvm_pkg::*
+  See the SystemVerilog LRM(1800-2005), section 19.2.1.
+
+Back to file 'TB/top.sv'.
+Parsing included file 'TB/pcs_env.sv'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/uvm_macros.svh'.
+Back to file 'TB/pcs_env.sv'.
+
+Note-[SV-LCM-PPWI] Package previously wildcard imported
+TB/pcs_env.sv, 3
+$unit
+  Package 'uvm_pkg' already wildcard imported. 
+  Ignoring uvm_pkg::*
+  See the SystemVerilog LRM(1800-2005), section 19.2.1.
+
+Back to file 'TB/top.sv'.
+Parsing included file 'TB/pcs_sequence.sv'.
+
+Note-[SV-LCM-PPWI] Package previously wildcard imported
+TB/pcs_sequence.sv, 1
+$unit
+  Package 'uvm_pkg' already wildcard imported. 
+  Ignoring uvm_pkg::*
+  See the SystemVerilog LRM(1800-2005), section 19.2.1.
+
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/uvm_macros.svh'.
+Back to file 'TB/pcs_sequence.sv'.
+Back to file 'TB/top.sv'.
+Parsing included file 'TB/pcs_test.sv'.
+Parsing included file '/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/uvm_macros.svh'.
+Back to file 'TB/pcs_test.sv'.
+
+Note-[SV-LCM-PPWI] Package previously wildcard imported
+TB/pcs_test.sv, 3
+$unit
+  Package 'uvm_pkg' already wildcard imported. 
+  Ignoring uvm_pkg::*
+  See the SystemVerilog LRM(1800-2005), section 19.2.1.
+
+Back to file 'TB/top.sv'.
+Top Level Modules:
+       uvm_custom_install_recording
+       top
+TimeScale is 1 ns / 1 ps
+Starting vcs inline pass...
+
+8 modules and 0 UDP read.
+recompiling package vcs_paramclassrepository
+recompiling package uvm_pkg
+recompiling package _vcs_msglog
+recompiling module uvm_custom_install_recording
+recompiling module DUTS26_0
+recompiling package pcs_tx_rm_dpi_pkg
+recompiling module pcs_if
+recompiling module top
+All of 8 modules done
+rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+gcc -w  -pipe -m32 -DVCS -DUVM_DPI_DO_TYPE_CHECK -std=c99 -O -I/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/include \
+-c ../reference_model/pcs_tx_rm_dut0_dpi.c
+cc1plus: warning: command line option '-std=c99' is valid for C/ObjC but not for \
+C++ [enabled by default]
+g++ -w  -pipe -m32 -DVCS -DUVM_DPI_DO_TYPE_CHECK -std=c99 -O -I/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/include \
+-c /apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/uvm/dpi/uvm_dpi.cc
+if [ -x ../simv ]; then chmod a-x ../simv; fi
+g++  -o ../simv      -m32 -m32 -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir \
+-Wl,-rpath=/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/lib -L/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/lib \
+-Wl,-rpath-link=./  pcs_tx_rm_dut0_dpi.o uvm_dpi.o   objs/amcQw_d.o   _1800_archive_1.so \
+SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o \
+-lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -luclinative /apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/lib/vcs_tls.o \
+-Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive       ./../simv.daidir/vc_hdrs.o \
+/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/lib/vcs_save_restore_new.o /apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/lib/ctype-stubs_32.a \
+-ldl  -lc -lm -lpthread -ldl 
+../simv up to date
+CPU time: 8.780 seconds to compile + .277 seconds to elab + .584 seconds to link

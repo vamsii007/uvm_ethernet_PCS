@@ -1,8 +1,7 @@
 import uvm_pkg::*;
 `include "uvm_macros.svh"
-`include "pcs_item.sv"
 
-class pcs_sequence extends uvm_sequence#(pcs_item)
+class pcs_sequence extends uvm_sequence#(pcs_item);
     `uvm_object_utils(pcs_sequence)
 
 

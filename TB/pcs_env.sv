@@ -15,7 +15,7 @@ class pcs_env extends uvm_env;
   function void build_phase(uvm_phase phase);
     super.build_phase(phase);
 
-    for (int i=0; i<10; i++) begin
+    for (int i=0; i<1; i++) begin
       agent[i] = pcs_agent::type_id::create($sformatf("agent[%0d]", i), this);
       sb[i] = pcs_scoreboard::type_id::create($sformatf("sb[%0d]", i), this);
       uvm_config_db#(int)::set(this, agent[i].get_name(), "pcs_id", i);
@@ -26,8 +26,8 @@ class pcs_env extends uvm_env;
   function void connect_phase(uvm_phase phase);
     super.connect_phase(phase);
 
-    for (int i=0; i<10; i++) begin
-      agent[i].mon.ap.connect(sb[i].imp);
+    for (int i=0; i<1; i++) begin
+      agent[i].mon.mon_ap.connect(sb[i].imp);
     end
   endfunction
 endclass

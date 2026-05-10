@@ -4,8 +4,9 @@ import uvm_pkg::*;
 class pcs_monitem extends uvm_sequence_item;
 
  bit rst_n;
- bit [8:0] enc_in;
- bit [11:0] enc_out;
+ bit [7:0] Din;
+ bit TX_EN;
+ bit [3:0][2:0] Dout;
 
 `uvm_object_utils_begin(pcs_monitem)
  `uvm_field_int(rst_n,UVM_ALL_ON)

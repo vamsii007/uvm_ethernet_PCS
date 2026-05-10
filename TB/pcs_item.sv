@@ -17,7 +17,7 @@ class pcs_item extends uvm_sequence_item;
    }
 
    
-  `uvm_object_utils_begin(pcs_packet_item)
+  `uvm_object_utils_begin(pcs_item)
     `uvm_field_array_int(data, UVM_ALL_ON)
     `uvm_field_int      (gap_incycles, UVM_ALL_ON)
   `uvm_object_utils_end
