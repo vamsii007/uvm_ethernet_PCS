@@ -1,0 +1,9 @@
+{"vcs1":{"timestamp_begin":1778451476.869874191, "rt":9.84, "ut":8.65, "st":0.25}}
+{"vcselab":{"timestamp_begin":1778451486.774132448, "rt":0.60, "ut":0.22, "st":0.07}}
+{"link":{"timestamp_begin":1778451487.437234168, "rt":1.39, "ut":0.62, "st":0.22}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1778451476.479975269}
+{"VCS_COMP_START_TIME": 1778451476.479975269}
+{"VCS_COMP_END_TIME": 1778451489.406126945}
+{"VCS_USER_OPTIONS": "-sverilog -ntb_opts uvm -timescale=1ns/1ps +incdir+TB +incdir+reference_model TB/top.sv reference_model/pcs_tx_rm_dut0_dpi.c -CFLAGS -std=c99 -debug_access+all -l compile.log"}
+{"vcs1": {"peak_mem": 305316}}
+{"vcselab": {"peak_mem": 156556}}

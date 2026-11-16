@@ -1,0 +1,8 @@
+<Command name="schRTLInfo"  delimiter="."  >
+<RTLBlock >
+<RTLInfo   name="cstate_0"  type="2"  fileName="TB/../dut/dut.sv"  >
+    <Seg beginLine="97"  endLine="202"  />
+  </RTLInfo>
+ <Instance name="top.genblk1[0].dut"  />
+</RTLBlock>
+ </Command>

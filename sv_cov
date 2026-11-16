@@ -1,0 +1,15 @@
+#!/usr/bin/csh
+source /apps/design_environment.csh
+vcs -sverilog -ntb_opts uvm -timescale=1ns/1ns +acc +vpi \
+    +define+UVM_OBJECT_MUST_HAVE_CONSTRUCTOR \
+    -assert svaext -lca \
+    -cm line+cond+fsm -cm_cond allops+for+full -cm_count \
+    $argv
+if ($status != 0) exit $status
+./simv -cm line+cond+fsm -cm_count
+if ($status != 0) exit $status
+urg -lca -metric group+line+cond+fsm -dir simv.vdb
+if ($status != 0) exit $status
+firefox urgReport/dashboard.html
+
+

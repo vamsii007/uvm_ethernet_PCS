@@ -18,11 +18,22 @@ class pcs_test extends uvm_test;
   endfunction
 
   task run_phase(uvm_phase phase);
-    phase.raise_objection(this);
 
-    seq = pcs_sequence::type_id::create("seq");
-    seq.start(env.agent[0].seqr);
+  pcs_random_reset_vseq vseq;
 
+  phase.raise_objection(this);
+
+  for (int i = 0; i < env.vseqr.num_duts; i++) begin
+    vseq = pcs_random_reset_vseq::type_id::create($sformatf("vseq_%0d", i));
+
+    vseq.dut_id = i;
+
+    `uvm_info(get_type_name(),
+      $sformatf("Starting random reset vseq for DUT[%0d]", i),
+      UVM_LOW)
+
+    vseq.start(env.vseqr);
+    end
     #1000ns;
 
     phase.drop_objection(this);

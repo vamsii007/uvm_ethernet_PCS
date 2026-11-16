@@ -1,0 +1,5 @@
+{"vcs1":{"timestamp_begin":1778386577.183132645, "rt":0.30, "ut":0.08, "st":0.04}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1778386576.772096767}
+{"VCS_COMP_START_TIME": 1778386576.772096767}
+{"VCS_COMP_END_TIME": 1778386577.537333993}
+{"VCS_USER_OPTIONS": "-sverilog -timescale=1ns/1ns +acc +vpi +define+UVM_OBJECT_MUST_HAVE_CONSTRUCTOR -assert svaext -lca -cm line+cond+fsm -cm_cond allops+for+full -cm_count +incdir+/home/morris/uvm-1.2/src /home/morris/uvm-1.2/src/uvm.sv /home/morris/uvm-1.2/src/dpi/uvm_dpi.cc -CFLAGS -DVCS top.sv"}

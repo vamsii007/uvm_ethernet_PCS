@@ -29,16 +29,14 @@ virtual task run_phase(uvm_phase phase);
   super.run_phase(phase);
 
   forever begin
-    @(posedge vif.Clk);
-
-    monitem = pcs_monitem::type_id::create("monitem");
-
-    monitem.rst_n = vif.rst_n;
-    monitem.Din   = vif.Din;
-    monitem.TX_EN = vif.TX_EN;
-    monitem.Dout  = vif.Dout;
-    mon_ap.write(monitem);
-  end
+  @(vif.cb_mon);
+  monitem = pcs_monitem::type_id::create("monitem");
+  monitem.rst_n = vif.cb_mon.rst_n;
+  monitem.Din   = vif.cb_mon.Din;
+  monitem.TX_EN = vif.cb_mon.TX_EN;
+  monitem.Dout  = vif.cb_mon.Dout;
+  mon_ap.write(monitem);
+end
 endtask
 
 endclass

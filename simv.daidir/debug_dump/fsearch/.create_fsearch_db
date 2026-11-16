@@ -1,0 +1,9 @@
+#!/bin/sh -h 
+PYTHONHOME=/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/search/pyh
+export PYTHONHOME
+PYTHONPATH=/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/lib/pylib27
+export PYTHONPATH
+LD_LIBRARY_PATH=/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/lib:/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/lib/pylib27
+export LD_LIBRARY_PATH
+/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/bin/vcsfind_create_index.exe  -z  "/home/019121947@SJSUAD.SJSU.EDU/ee273_project/uvm_ethernet_PCS/simv.daidir/debug_dump/fsearch/./idents_tapi.xml.gz" "/home/019121947@SJSUAD.SJSU.EDU/ee273_project/uvm_ethernet_PCS/simv.daidir/debug_dump/fsearch/./idents_exmjsD.xml.gz" -o "/home/019121947@SJSUAD.SJSU.EDU/ee273_project/uvm_ethernet_PCS/simv.daidir/debug_dump/fsearch/fsearch.db_tmp"
+\mv "/home/019121947@SJSUAD.SJSU.EDU/ee273_project/uvm_ethernet_PCS/simv.daidir/debug_dump/fsearch/fsearch.db_tmp" "/home/019121947@SJSUAD.SJSU.EDU/ee273_project/uvm_ethernet_PCS/simv.daidir/debug_dump/fsearch/fsearch.db"

@@ -8,7 +8,7 @@ class pcs_sequence extends uvm_sequence#(pcs_item);
  rand int packet_num;
 
  constraint num_packets_c {
-    packet_num inside {[4:20]};
+    packet_num inside {[60:70]};
   }
 
 function new(string name = "pcs_sequence");

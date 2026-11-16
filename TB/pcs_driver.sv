@@ -19,34 +19,61 @@ class pcs_driver extends uvm_driver #(pcs_item);
   endfunction
 
   virtual task run_phase(uvm_phase phase);
-    pcs_item my_item;
-    vif.TX_EN <= 1'b0;
-    vif.Din   <= 8'd0;
+  pcs_item my_item;
 
-    wait(vif.rst_n == 1'b1);
+  vif.TX_EN <= 1'b0;
+  vif.Din   <= 8'd0;
 
-    forever begin
-      `uvm_info(get_type_name(), "waiting for data from sequencer", UVM_MEDIUM)
-      seq_item_port.get_next_item(my_item);
-      drive_packet(my_item);
-      seq_item_port.item_done();
-    end
-  endtask
+  forever begin
+    wait_reset_release();
 
-  task drive_packet(pcs_item my_item);
+    `uvm_info(get_type_name(), "waiting for data from sequencer", UVM_MEDIUM)
 
-    foreach(my_item.data[i]) begin
-      @(vif.cb_dr);
-      vif.cb_dr.TX_EN <= 1'b1;
-      vif.cb_dr.Din   <= my_item.data[i];
-    end
+    seq_item_port.get_next_item(my_item);
+    drive_packet(my_item);
+    seq_item_port.item_done();
+  end
+endtask
 
-    repeat(my_item.gap_incycles) begin
-      @(vif.cb_dr);
+
+task wait_reset_release();
+
+  while (vif.rst_n !== 1'b1) begin
+    @(vif.cb_dr);
+    vif.cb_dr.TX_EN <= 1'b0;
+    vif.cb_dr.Din   <= $urandom_range(0, 255);
+  end
+
+endtask
+
+ task drive_packet(pcs_item my_item);
+
+  foreach(my_item.data[i]) begin
+    @(vif.cb_dr);
+
+    if (vif.rst_n !== 1'b1) begin
       vif.cb_dr.TX_EN <= 1'b0;
-      vif.cb_dr.Din   <= 8'd0;
+      vif.cb_dr.Din   <= $urandom_range(0, 255);
+      return;
     end
 
-  endtask
+    vif.cb_dr.TX_EN <= 1'b1;
+    vif.cb_dr.Din   <= my_item.data[i];
+  end
+
+  repeat(my_item.gap_incycles) begin
+    @(vif.cb_dr);
+
+    if (vif.rst_n !== 1'b1) begin
+      vif.cb_dr.TX_EN <= 1'b0;
+      vif.cb_dr.Din   <= $urandom_range(0, 255);
+      return;
+    end
+
+    vif.cb_dr.TX_EN <= 1'b0;
+    vif.cb_dr.Din   <= 8'd0;
+  end
+
+endtask
 
 endclass

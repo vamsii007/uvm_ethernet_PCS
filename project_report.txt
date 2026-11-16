@@ -1,0 +1,109 @@
+How to Run the UVM Test
+
+Go to the project folder and run:
+
+./run.sh top.sv
+
+************
+Final Result-
+PASS=499 FAIL=138996
+************
+
+DUT0 Bug Analysis
+
+Based on the UVM simulation result, DUT does not match the reference model across reset recovery, idle cycles, packet start, data transmission, and packet ending. 
+The mismatches are not random. Several repeated mismatch patterns in sim.log suggest specific design bugs in the DUT RTL.
+
+1. Missing SSD1 after reset release
+
+From sim.log, after a random reset is released, the first cycle with TX_EN=1 often shows:
+
+expected = 492, got = 000
+ref symbols = (2,2,2,2)
+dut symbols = (0,0,0,0)
+
+This suggests that the DUT does not output SSD1 immediately when TX_EN becomes high after reset.
+
+In the DUT RTL, reset puts the FSM into s_reset. In s_reset, the next state is s_send_idle and the output is generated from lookup_idle(Sd). 
+The state does not check TX_EN in this cycle. Therefore, if TX_EN is already high on the first active cycle after reset, the DUT still outputs idle/zero instead of SSD1.
+
+This explains the repeated expected=492 got=000 mismatch after reset release.
+
+2. Incorrect idle Sd generation
+
+From sim.log, during TX_EN=0 cycles, the output still mismatches, for example:
+
+expected = c96, got = c36
+expected = c96, got = 180
+
+This suggests that the idle encoding path is wrong. 
+During idle mode, the output should mainly depend on the scrambler and idle/carrier extension control, not directly on the current Din value.
+
+In DUT, the Sd logic is:
+
+Sd[1] = (tx_enable[2]) ? Sc[1] ^ TXD[1] : Sc[1] ^ 1;
+Sd[0] = (Sc[0] ^ tx_enable[2]) ? TXD[0] : 0;
+
+The first line forces Sd[1] to invert during non-data cycles. The second line makes Sd[0] depend on TXD[0] even when TX_EN is low. 
+This is not consistent with the expected idle encoding behavior.
+This explains why mismatches appear even when TX_EN=0.
+
+3. Incorrect Sc[3:1] phase during idle/scrambler operation
+
+From sim.log, a repeated transition-related mismatch appears as:
+
+expected = cb2, got = 496
+ref symbols = (-2,2,-2,2)
+dut symbols = (2,2,2,-2)
+
+The two outputs look like they are related special/transition symbols, but the signs and symbol values are different. 
+This suggests that the scrambler or polarity phase is not aligned with the reference model.
+
+In DUT, Sc[3:1] is generated as:
+
+Sc[3:1] = (!OE) ? Sy[3:1] : ~Synm1[3:1];
+
+After reset, Synm1 is reset to 0 and OE is reset to 1. Therefore, the first selected value can become ~Synm1[3:1] = 111. 
+This does not match the expected Sy/Sx-based phase behavior.
+Because Sc affects Sd, and Sd affects the table lookup, this phase mismatch can create repeated wrong transition symbols.
+
+4. Incorrect convolutional encoder state update
+
+From sim.log, after the packet enters data transmission, the mismatches become widely different instead of only being simple sign flips. 
+This suggests that an internal history state diverges over time.
+
+In DUT, the convolutional encoder update is:
+
+CS[2] = (tx_enable[2] == 1) ? Sd[7] ^ TXD[7] : 0;
+CS[1] = (tx_enable[2] == 1) ? Sd[6] ^ CSnm1[1] : 0;
+CS[0] = CSnm1[2];
+
+The expected convolutional encoder should update from Sd bits and the previous CS state. 
+However, DUT uses TXD[7] in CS[2], and uses CSnm1[1] for CS[1] instead of the proper previous CS bit.
+Once CS becomes wrong, Sd[8] also becomes wrong. Since Sd[8:6] selects the mapping subset, the final PAM5 symbols can become completely different from the reference model.
+This explains the large number of data-mode mismatches.
+
+5. Incorrect CSReset Sd[6] bit
+
+From sim.log, mismatches also appear around packet transition and end-related cycles. 
+This suggests that the CSReset path may be incorrect.
+
+In DUT, the CSReset Sd logic is:
+
+Sd[7] = csreset ? CSnm1[1] : ...
+Sd[6] = csreset ? CSnm1[1] : ...
+
+Both Sd[7] and Sd[6] use CSnm1[1]. However, Sd[6] should use the other previous convolutional state bit. 
+Therefore, the reset information sent during CSReset is encoded incorrectly.
+
+This causes incorrect symbols around the packet ending sequence and can also affect following state alignment.
+
+Overall Conclusion-
+
+The UVM mismatch results are consistent with multiple RTL bugs in DUT. 
+The most visible issue is that DUT misses SSD1 immediately after reset release. 
+In addition, the idle Sd generation, Sc phase selection, convolutional encoder update, and CSReset encoding are not consistent with the expected PCS transmit behavior.
+Because the PCS encoder is stateful, one wrong cycle can affect later scrambler/state alignment. 
+Therefore, many later mismatches are likely cascading effects from these root causes.
+
+

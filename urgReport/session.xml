@@ -1,0 +1,28 @@
+<session version="1.1" release="U-2023.03-SP2-8" timestp="2026-05-10 21:41:21 GMT">
+  <info>
+    <attr name="datetime" value="Sun May 10 14:41:22 2026
+"/>
+    <attr name="command" value="urg -lca -metric group+line+cond+fsm -dir simv.vdb"/>
+    <attr name="top_instance" value="top"/>
+  </info>
+  <hvp>
+    <datadef>
+      <metdef name="Line" type="ratio" aggregator="average" builtin="1" />
+      <metdef name="Cond" type="ratio" aggregator="average" builtin="1" />
+      <metdef name="FSM" type="ratio" aggregator="average" builtin="1" />
+    </datadef>
+  </hvp>
+  <old_coverage>
+  <scope type="top" name="top">
+    <metric name="Line" value="655/660" />
+    <metric name="Cond" value="734/738" />
+    <metric name="FSM" value="8/15" />
+  </scope>
+  <scope type="instance" name="top">
+  </scope>
+  <scope type="group" name="top">
+  </scope>
+  <scope type="assert" name="Statistics">
+  </scope>
+  </old_coverage>
+</session>

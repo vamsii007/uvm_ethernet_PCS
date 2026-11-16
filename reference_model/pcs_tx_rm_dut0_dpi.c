@@ -1629,7 +1629,9 @@ static bool pcs_dpi_dut0_is_initialized = false;
 
 void pcs_dpi_dut0_reset(void)
 {
-    pcs_dut0_reset(&pcs_dpi_dut0_state);
+    pcs_tx_init_cfg_t cfg;
+    pcs_tx_default_init_cfg(&cfg);
+    pcs_tx_init_state(&pcs_dpi_dut0_state, &cfg);
     pcs_dpi_dut0_is_initialized = true;
 }
 
@@ -1639,8 +1641,18 @@ uint32_t pcs_dpi_dut0_step(uint32_t din, uint32_t tx_en)
         pcs_dpi_dut0_reset();
     }
 
+    pcs_tx_in_t  in;
     pcs_tx_out_t out;
-    pcs_dut0_step(&pcs_dpi_dut0_state, (uint8_t)(din & 0xFFU), tx_en != 0U, &out);
+
+    in.txd             = (uint8_t)(din & 0xFFU);
+    in.tx_enable       = (tx_en != 0U);
+    in.tx_error        = false;
+    in.tx_mode         = PCS_TX_MODE_SEND_N;
+    in.loc_lpi_req     = false;
+    in.loc_rcvr_status = PCS_RCVR_OK;
+    in.loc_update_done = false;
+
+    pcs_tx_step(&pcs_dpi_dut0_state, &in, &out);
     return (uint32_t)(out.packed12_tc3 & 0x0FFFU);
 }
 
