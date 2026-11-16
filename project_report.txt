@@ -1,13 +1,23 @@
 How to Run the UVM Test
 
-Go to the project folder and run:
+Go to the tb folder and run:
 
-./run.sh top.sv
+./sv_uvm top.sv ../reference_model/pcs_tx_rm_dut0_dpi.c -CFLAGS -std=c99
 
 ************
 Final Result-
-PASS=499 FAIL=138996
+// PASS=499 FAIL=138996
 ************
+sim_pcs_test_all_ones.log:UVM_INFO pcs_scoreboard.sv(103) @ 6955000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] SCOREBOARD RESULT: PASS=57 FAIL=632
+sim_pcs_test_all_zeros.log:UVM_INFO pcs_scoreboard.sv(103) @ 6955000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] SCOREBOARD RESULT: PASS=47 FAIL=642
+sim_pcs_test_alt_55_aa.log:UVM_INFO pcs_scoreboard.sv(103) @ 2715000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] SCOREBOARD RESULT: PASS=18 FAIL=247
+sim_pcs_test_btb.log:UVM_INFO pcs_scoreboard.sv(103) @ 11765000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] SCOREBOARD RESULT: PASS=92 FAIL=1078
+sim_pcs_test.log:UVM_INFO pcs_scoreboard.sv(103) @ 952085000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] SCOREBOARD RESULT: PASS=330 FAIL=94478
+sim_pcs_test_max.log:UVM_INFO pcs_scoreboard.sv(103) @ 46495000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] SCOREBOARD RESULT: PASS=230 FAIL=4413
+sim_pcs_test_min.log:UVM_INFO pcs_scoreboard.sv(103) @ 4395000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] SCOREBOARD RESULT: PASS=38 FAIL=395
+sim_pcs_test_same_byte.log:UVM_INFO pcs_scoreboard.sv(103) @ 2715000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] SCOREBOARD RESULT: PASS=18 FAIL=247
+sim_pcs_test_walking_ones.log:UVM_INFO pcs_scoreboard.sv(103) @ 1355000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] SCOREBOARD RESULT: PASS=6 FAIL=123
+sim_pcs_test_walking_zeros.log:UVM_INFO pcs_scoreboard.sv(103) @ 1355000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] SCOREBOARD RESULT: PASS=6 FAIL=123
 
 DUT0 Bug Analysis
 
