@@ -19,9 +19,8 @@ PRODUCT_TIMESTAMP=product_timestamp
 # Path to runtime library
 DEPLIBS=
 VCSUCLI=-lvcsucli
-BALIBS= 
 LLVM_FLAGS=
-RUNTIME=-lvcsnew -lsimprofile -lreader_common /apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/lib/libBA.a -luclinative /apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/lib/vcs_tls.o $(DEPLIBS) 
+RUNTIME=-lvcsnew -lsimprofile -luclinative /apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/lib/vcs_tls.o $(DEPLIBS) 
 
 VCS_SAVE_RESTORE_OBJ=/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/lib/vcs_save_restore_new.o
 
@@ -66,7 +65,7 @@ TMPSPECENV=$(VCSTMPSPECENV)
 CC=$(TMPSPECENV) $(VCS_CC) $(TMPSPECARG)
 
 # C flags for compilation
-CFLAGS=$(STDLIB)-w  -pipe -m32 -DVCS -O -I/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/include   
+CFLAGS=$(STDLIB)-w  -pipe -m32 -DVCS -std=c99 -O -I/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/include   
 
 CFLAGS_O0=-w  -pipe -m32 -I/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/include -O0  -fno-strict-aliasing -fno-optimize-sibling-calls   
 
@@ -123,6 +122,6 @@ $(PRODUCT_TIMESTAMP) : product_clean_order
 	@touch $(PRODUCT_TIMESTAMP)
 	@-if [ -d ./objs ]; then find ./objs -type d -empty -delete; fi
 
-$(PRODUCT) :  $(LD_VERSION_CHECK)  $(OBJS) $(DOTLIBS) $(DPI_STUB_OBJS) $(PLI_STUB_OBJS) $(CMODLIB) $(SYSC_STUB_LIB) $(DPI_ALLOW_MAIN_SO)  /apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/lib/libvcsnew.so /apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/lib/libsimprofile.so /apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/lib/libreader_common.so /apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/lib/libBA.a /apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/lib/libuclinative.so /apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/lib/vcs_tls.o /apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/lib/libvcsucli.so  $(VCS_SAVE_RESTORE_OBJ) 
+$(PRODUCT) :  $(LD_VERSION_CHECK)  $(OBJS) $(DOTLIBS) $(DPI_STUB_OBJS) $(PLI_STUB_OBJS) $(CMODLIB) $(SYSC_STUB_LIB) $(DPI_ALLOW_MAIN_SO)  /apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/lib/libvcsnew.so /apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/lib/libsimprofile.so /apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/lib/libuclinative.so /apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/lib/vcs_tls.o /apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/lib/libvcsucli.so  $(VCS_SAVE_RESTORE_OBJ) 
 	@touch $(PRODUCT)
 

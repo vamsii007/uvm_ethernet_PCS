@@ -283,19 +283,18 @@
 0 /apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/systemverilog/reg/sequences/uvm_reg_mem_built_in_seq.svh
 0 reg/sequences/uvm_reg_mem_hdl_paths_seq.svh
 0 /apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/systemverilog/reg/sequences/uvm_reg_mem_hdl_paths_seq.svh
-36
-+acc
+27
 +define+UVM_OBJECT_MUST_HAVE_CONSTRUCTOR
 +incdir+/home/morris/uvm-1.2/src
 +vpi
 -Mamsrun=
 -Masflags=--32
 -Mcc=gcc
--Mcfl= -pipe -m32 -DVCS -O -I/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/include
+-Mcfl= -pipe -m32 -DVCS -std=c99 -O -I/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/include
 -Mcplusplus=g++
 -Mcrt0=
 -Mcrtn=
--Mcsrc=/home/morris/uvm-1.2/src/dpi/uvm_dpi.cc
+-Mcsrc=/home/morris/uvm-1.2/src/dpi/uvm_dpi.cc ../reference_model/pcs_tx_rm_dut0_dpi.c
 -Mexternalobj=
 -Mldflags= -m32 -m32 -rdynamic
 -Mobjects= /apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/lib/libvirsim.so /apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/lib/liberrorinf.so /apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/lib/libsnpsmalloc.so /apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/lib/libvfs.so
@@ -305,32 +304,25 @@
 -Mvcsaceobjs=
 -Mxcflags= -pipe -m32 -I/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/include
 -Mxllcflags=
--assert
--cm
--cm_cond
--cm_count
 -gen_obj
--lca
 -picarchive
 -sverilog
 -timescale=1ns/1ns
 /apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/bin/vcs1
-svaext
-line+cond+fsm
-allops+for+full
 /home/morris/uvm-1.2/src/uvm.sv
 top.sv
-86
+90
 which_declare=declare -f
 cdk_dir=/apps/cadence/IC50/tools/dfII/local
 __MODULES_SHARE_MANPATH=:1
 __MODULES_LMINIT=module use --append /usr/share/Modules/modulefiles:module use --append /etc/modulefiles:module use --append /usr/share/modulefiles
 XRDP_SOCKET_PATH=/run/xrdp/1755041129
-XRDP_SESSION=3586111
+XRDP_SESSION=1703216
 XRDP_PULSE_SOURCE_SOCKET=xrdp_chansrv_audio_in_socket_10
 XRDP_PULSE_SINK_SOCKET=xrdp_chansrv_audio_out_socket_10
 XMODIFIERS=@im=ibus
 XDG_SESSION_TYPE=x11
+XDG_SESSION_ID=c24
 XDG_SESSION_CLASS=user
 XDG_RUNTIME_DIR=/run/user/1755041129
 XDG_MENU_PREFIX=gnome-
@@ -342,7 +334,6 @@ VENDOR=unknown
 VCS_PYTHON3=/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/bin/Python-3.6.1/bin/python3
 VCS_PATHMAP_PRELOAD_DONE=1
 VCS_MX_HOME_INTERNAL=1
-VCS_LCAMSG_PRINT_OFF=1
 VCS_HOME=/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8
 VCS_EXEC_DONE=1
 VCS_DEPTH=0
@@ -355,21 +346,19 @@ USE_NCSU_CDK=
 UNAME=/bin/uname
 TOOL_HOME=/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux
 TK_LIBRARY=/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/auxx/tcllib/tk8.4/library
-SYSTEMD_EXEC_PID=3586929
 SYNOPSYS_SIM=/apps/synopsys/2000.12
 SYNOPSYS=/apps/synopsys
 STROOT=/apps/synopsys/TCAD
 STRELEASE=current
 STDB=/home/019121947@SJSUAD.SJSU.EDU/sentaurus
 SSH_AUTH_SOCK=/run/user/1755041129/keyring/ssh
-SSH_AGENT_PID=3586276
+SSH_AGENT_PID=1703394
 SNPS_VCS_PYTHON3=/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/bin/Python-3.6.1/bin/python3
 SNPS_VCS_CLANG_PATH=/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/clang
 SNPS_INTERNAL_VCS_LINUX_OS=linux
 SNPSLMS_LICENSE_FILE=27020@coe-ee-licsrv.sjsuad.sjsu.edu:C:LicensingSynopsysSynopsys_Key_Site_5009_Server_337521_snpslmd.lic
 SKIP_CDS_DIALOG=
-SFLM_SERVER=coe-ee-licsrv.sjsuad.sjsu.edu
-SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/3586304,unix/unix:/tmp/.ICE-unix/3586304
+SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/1703228,unix/unix:/tmp/.ICE-unix/1703228
 SCRNAME=vcs
 SCRIPT_NAME=vcs
 QT_IM_MODULE=ibus
@@ -393,10 +382,12 @@ HSP_HOME=/apps/synopsys/HSPICE/hspice
 HOSTTYPE=x86_64-linux
 HISTCONTROL=ignoredups
 GROUP=domain users
-GNOME_TERMINAL_SERVICE=:1.86
-GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/1bbd511d_ac48_4d29_a31e_baedc24257f3
+GNOME_TERMINAL_SERVICE=:1.104
+GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/29d253c6_20d7_4ac3_9976_e8706a3e7c00
 DEBUGINFOD_IMA_CERT_PATH=/etc/keys/ima:
-DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1755041129/bus
+DBUS_STARTER_BUS_TYPE=session
+DBUS_STARTER_ADDRESS=unix:abstract=/tmp/dbus-UBgOMrSMu2,guid=d97972e2487a00d043b684d16af97389
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-UBgOMrSMu2,guid=d97972e2487a00d043b684d16af97389
 COLORTERM=truecolor
 CLS_CSD_COMPATIBILITY_LOCKING=NO
 CLS_CDSD_COMPATIBILITY_LOCKING=NO
@@ -406,24 +397,31 @@ CDS_Netlisting_Mode=Analog
 CDS_LIC_FILE=5280@coe-ee-licsrv.sjsuad.sjsu.edu:C:CadenceLicenseManagerlicense.dat
 CDSLMD_LICENSE_FILE=5280@coe-ee-licsrv.sjsuad.sjsu.edu:C:CadenceLicenseManagerlicense.dat
 CDS=/apps/cadence
+BASH_FUNC_which%%=() {  ( alias;_ eval ${which_declare} ) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot $@_}
+BASH_FUNC_module%%=() {  local _mlredir=0;_ if [ -n "${MODULES_REDIRECT_OUTPUT+x}" ]; then_ if [ "$MODULES_REDIRECT_OUTPUT" = '0' ]; then_ _mlredir=0;_ else_ if [ "$MODULES_REDIRECT_OUTPUT" = '1' ]; then_ _mlredir=1;_ fi;_ fi;_ fi;_ case " $@ " in _ *' --no-redirect '*)_ _mlredir=0_ ;;_ *' --redirect '*)_ _mlredir=1_ ;;_ esac;_ if [ $_mlredir -eq 0 ]; then_ _module_raw "$@";_ else_ _module_raw "$@" 2>&1;_ fi_}
+BASH_FUNC_ml%%=() {  module ml "$@"_}
+BASH_FUNC__module_raw%%=() {  eval "$(/usr/bin/tclsh '/usr/share/Modules/libexec/modulecmd.tcl' bash "$@")";_ _mlstatus=$?;_ return $_mlstatus_}
 ARCH=linux
 0
 0
-160
-1723539135 /apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/packages/sva/AN.DB
-1778383824 pcs_test.sv
-1778405964 pcs_sequence.sv
-1778383824 pcs_env.sv
-1778383824 pcs_agent.sv
-1778406019 pcs_scoreboard.sv
-1778385262 pcs_monitor.sv
-1778397150 pcs_driver.sv
-1778383824 pcs_sequencer.sv
-1778403417 pcs_monitem.sv
-1778383824 pcs_item.sv
-1778383824 pcs_if.sv
-1778383824 ../reference_model/pcs_tx_rm_dpi_pkg.sv
-1778383824 ../dut/dut.sv
+161
+1794819970 pcs_directed_tests.svh
+1794818783 pcs_directed_seqs.svh
+1794818783 pcs_test.sv
+1794818783 pcs_random_reset_vseq.sv
+1794818783 pcs_sequence.sv
+1794818783 pcs_env.sv
+1794818783 pcs_agent.sv
+1794818783 pcs_scoreboard.sv
+1794818783 pcs_monitor.sv
+1794818783 pcs_driver.sv
+1794818783 pcs_virtual_sequencer.sv
+1794818783 pcs_sequencer.sv
+1794818783 pcs_monitem.sv
+1794818783 pcs_item.sv
+1794818783 pcs_if.sv
+1794818789 ../reference_model/pcs_tx_rm_dpi_pkg.sv
+1794818789 ../dut/dut.sv
 1402647219 /home/morris/uvm-1.2/src/reg/sequences/uvm_reg_mem_hdl_paths_seq.svh
 1402647219 /home/morris/uvm-1.2/src/reg/sequences/uvm_reg_mem_built_in_seq.svh
 1402647219 /home/morris/uvm-1.2/src/reg/sequences/uvm_reg_mem_shared_access_seq.svh
@@ -566,15 +564,14 @@ ARCH=linux
 1402647219 /home/morris/uvm-1.2/src/macros/uvm_version_defines.svh
 1402647219 /home/morris/uvm-1.2/src/uvm_macros.svh
 1402647219 /home/morris/uvm-1.2/src/uvm_pkg.sv
-1723518364 /apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/etc/sva/rec_ltl_classes_package.svp
-1778442020 top.sv
+1794818787 top.sv
 1402647219 /home/morris/uvm-1.2/src/uvm.sv
-1723518352 /apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/include/cm_vcsd.tab
-5
+6
 1402647219 /home/morris/uvm-1.2/src/dpi/uvm_dpi.cc
+1794818789 ../reference_model/pcs_tx_rm_dut0_dpi.c
 1723522646 /apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/lib/libvirsim.so
 1723520847 /apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/lib/liberrorinf.so
 1723520604 /apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/lib/libsnpsmalloc.so
 1723521397 /apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/linux/lib/libvfs.so
-1778442419 simv.daidir
+1794820526 simv.daidir
 -1 partitionlib

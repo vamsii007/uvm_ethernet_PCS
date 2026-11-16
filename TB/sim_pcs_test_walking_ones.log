@@ -1,0 +1,183 @@
+Command: /home/019121947@SJSUAD.SJSU.EDU/Desktop/uvm_ethernet_PCS/TB/./simv +UVM_TESTNAME=pcs_test_walking_ones +ntb_random_seed_automatic -l sim_pcs_test_walking_ones.log
+Chronologic VCS simulator copyright 1991-2023
+Contains Synopsys proprietary information.
+Compiler version U-2023.03-SP2-8; Runtime version U-2023.03-SP2-8;  Nov 16 01:15 2026
+NOTE: automatic random seed used: 2325444239
+UVM_INFO /home/morris/uvm-1.2/src/base/uvm_root.svh(392) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test pcs_test_walking_ones...
+UVM_INFO pcs_env.sv(27) @ 0: uvm_test_top.env [ENV] Creating 1 PCS agents
+UVM_INFO pcs_scoreboard.sv(36) @ 5000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] RESET ACTIVE: Din=0x00 TX_EN=0 Dout=000000000000, ref symbols=(0,0,0,0), dut symbols=(0,0,0,0)
+UVM_INFO pcs_scoreboard.sv(36) @ 15000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] RESET ACTIVE: Din=0x3c TX_EN=0 Dout=000000000000, ref symbols=(0,0,0,0), dut symbols=(0,0,0,0)
+UVM_INFO pcs_scoreboard.sv(36) @ 25000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] RESET ACTIVE: Din=0xb7 TX_EN=0 Dout=000000000000, ref symbols=(0,0,0,0), dut symbols=(0,0,0,0)
+UVM_INFO pcs_scoreboard.sv(36) @ 35000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] RESET ACTIVE: Din=0xfd TX_EN=0 Dout=000000000000, ref symbols=(0,0,0,0), dut symbols=(0,0,0,0)
+UVM_INFO pcs_scoreboard.sv(36) @ 45000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] RESET ACTIVE: Din=0x7b TX_EN=0 Dout=000000000000, ref symbols=(0,0,0,0), dut symbols=(0,0,0,0)
+UVM_INFO pcs_driver.sv(30) @ 55000: uvm_test_top.env.agent_0.drv [pcs_driver] waiting for data from sequencer
+UVM_ERROR pcs_scoreboard.sv(57) @ 65000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x6f TX_EN=0 expected=c30 got=c36, ref symbols=(-2,0,-2,0), dut symbols=(-2,0,-2,-2)
+UVM_ERROR pcs_scoreboard.sv(57) @ 75000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x55 TX_EN=0 expected=186 got=180, ref symbols=(0,-2,0,-2), dut symbols=(0,-2,0,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 85000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x55 TX_EN=0 expected=030 got=036, ref symbols=(0,0,-2,0), dut symbols=(0,0,-2,-2)
+UVM_ERROR pcs_scoreboard.sv(57) @ 95000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x55 TX_EN=0 expected=186 got=000, ref symbols=(0,-2,0,-2), dut symbols=(0,0,0,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 105000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x55 TX_EN=0 expected=030 got=0b6, ref symbols=(0,0,-2,0), dut symbols=(0,2,-2,-2)
+UVM_ERROR pcs_scoreboard.sv(57) @ 115000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x55 TX_EN=0 expected=186 got=180, ref symbols=(0,-2,0,-2), dut symbols=(0,-2,0,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 145000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x04 TX_EN=1 expected=190 got=036, ref symbols=(0,-2,2,0), dut symbols=(0,0,-2,-2)
+UVM_ERROR pcs_scoreboard.sv(57) @ 155000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x08 TX_EN=1 expected=c02 got=c00, ref symbols=(-2,0,0,2), dut symbols=(-2,0,0,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 165000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x10 TX_EN=1 expected=207 got=e91, ref symbols=(1,0,0,-1), dut symbols=(-1,2,2,1)
+UVM_ERROR pcs_scoreboard.sv(57) @ 175000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x20 TX_EN=1 expected=1b6 got=400, ref symbols=(0,-2,-2,-2), dut symbols=(2,0,0,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 185000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x40 TX_EN=1 expected=400 got=196, ref symbols=(2,0,0,0), dut symbols=(0,-2,2,-2)
+UVM_ERROR pcs_scoreboard.sv(57) @ 195000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x80 TX_EN=1 expected=cb7 got=000, ref symbols=(-2,2,-2,-1), dut symbols=(0,0,0,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 205000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x01 TX_EN=1 expected=410 got=591, ref symbols=(2,0,2,0), dut symbols=(2,-2,2,1)
+UVM_ERROR pcs_scoreboard.sv(57) @ 215000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x02 TX_EN=1 expected=03f got=18f, ref symbols=(0,0,-1,-1), dut symbols=(0,-2,1,-1)
+UVM_ERROR pcs_scoreboard.sv(57) @ 225000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x04 TX_EN=1 expected=181 got=187, ref symbols=(0,-2,0,1), dut symbols=(0,-2,0,-1)
+UVM_ERROR pcs_scoreboard.sv(57) @ 235000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x08 TX_EN=1 expected=3f8 got=3ff, ref symbols=(1,-1,-1,0), dut symbols=(1,-1,-1,-1)
+UVM_ERROR pcs_scoreboard.sv(57) @ 245000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x10 TX_EN=1 expected=e40 got=ff6, ref symbols=(-1,1,0,0), dut symbols=(-1,-1,-2,-2)
+UVM_ERROR pcs_scoreboard.sv(57) @ 255000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x20 TX_EN=1 expected=3fe got=27e, ref symbols=(1,-1,-1,-2), dut symbols=(1,1,-1,-2)
+UVM_ERROR pcs_scoreboard.sv(57) @ 265000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x40 TX_EN=1 expected=43f got=40f, ref symbols=(2,0,-1,-1), dut symbols=(2,0,1,-1)
+UVM_ERROR pcs_scoreboard.sv(57) @ 275000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x80 TX_EN=1 expected=08f got=0b8, ref symbols=(0,2,1,-1), dut symbols=(0,2,-1,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 285000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x01 TX_EN=1 expected=e11 got=e17, ref symbols=(-1,0,2,1), dut symbols=(-1,0,2,-1)
+UVM_ERROR pcs_scoreboard.sv(57) @ 295000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x02 TX_EN=1 expected=070 got=1c7, ref symbols=(0,1,-2,0), dut symbols=(0,-1,0,-1)
+UVM_ERROR pcs_scoreboard.sv(57) @ 305000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x04 TX_EN=1 expected=012 got=181, ref symbols=(0,0,2,2), dut symbols=(0,-2,0,1)
+UVM_ERROR pcs_scoreboard.sv(57) @ 315000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x08 TX_EN=1 expected=1d1 got=057, ref symbols=(0,-1,2,1), dut symbols=(0,1,2,-1)
+UVM_ERROR pcs_scoreboard.sv(57) @ 325000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x10 TX_EN=1 expected=fc0 got=277, ref symbols=(-1,-1,0,0), dut symbols=(1,1,-2,-1)
+UVM_ERROR pcs_scoreboard.sv(57) @ 335000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x20 TX_EN=1 expected=1b1 got=001, ref symbols=(0,-2,-2,1), dut symbols=(0,0,0,1)
+UVM_ERROR pcs_scoreboard.sv(57) @ 345000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x40 TX_EN=1 expected=048 got=1f8, ref symbols=(0,1,1,0), dut symbols=(0,-1,-1,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 355000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x80 TX_EN=1 expected=1b9 got=1bf, ref symbols=(0,-2,-1,1), dut symbols=(0,-2,-1,-1)
+UVM_ERROR pcs_scoreboard.sv(57) @ 365000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x01 TX_EN=1 expected=fc1 got=fc6, ref symbols=(-1,-1,0,1), dut symbols=(-1,-1,0,-2)
+UVM_ERROR pcs_scoreboard.sv(57) @ 375000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x02 TX_EN=1 expected=03f got=188, ref symbols=(0,0,-1,-1), dut symbols=(0,-2,1,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 385000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x04 TX_EN=1 expected=24a got=3ca, ref symbols=(1,1,1,2), dut symbols=(1,-1,1,2)
+UVM_ERROR pcs_scoreboard.sv(57) @ 395000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x08 TX_EN=1 expected=df7 got=077, ref symbols=(-2,-1,-2,-1), dut symbols=(0,1,-2,-1)
+UVM_ERROR pcs_scoreboard.sv(57) @ 405000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x10 TX_EN=1 expected=e79 got=e4e, ref symbols=(-1,1,-1,1), dut symbols=(-1,1,1,-2)
+UVM_ERROR pcs_scoreboard.sv(57) @ 415000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x20 TX_EN=1 expected=1fe got=1ce, ref symbols=(0,-1,-1,-2), dut symbols=(0,-1,1,-2)
+UVM_ERROR pcs_scoreboard.sv(57) @ 425000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x40 TX_EN=1 expected=188 got=1bf, ref symbols=(0,-2,1,0), dut symbols=(0,-2,-1,-1)
+UVM_ERROR pcs_scoreboard.sv(57) @ 435000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x80 TX_EN=1 expected=3d2 got=3c1, ref symbols=(1,-1,2,2), dut symbols=(1,-1,0,1)
+UVM_ERROR pcs_scoreboard.sv(57) @ 445000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x01 TX_EN=1 expected=dc7 got=df1, ref symbols=(-2,-1,0,-1), dut symbols=(-2,-1,-2,1)
+UVM_ERROR pcs_scoreboard.sv(57) @ 455000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x02 TX_EN=1 expected=ff6 got=271, ref symbols=(-1,-1,-2,-2), dut symbols=(1,1,-2,1)
+UVM_ERROR pcs_scoreboard.sv(57) @ 465000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x04 TX_EN=1 expected=011 got=191, ref symbols=(0,0,2,1), dut symbols=(0,-2,2,1)
+UVM_ERROR pcs_scoreboard.sv(57) @ 475000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x08 TX_EN=1 expected=0b2 got=082, ref symbols=(0,2,-2,2), dut symbols=(0,2,0,2)
+UVM_ERROR pcs_scoreboard.sv(57) @ 485000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x10 TX_EN=1 expected=0b6 got=036, ref symbols=(0,2,-2,-2), dut symbols=(0,0,-2,-2)
+UVM_ERROR pcs_scoreboard.sv(57) @ 495000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x20 TX_EN=1 expected=3bf got=3b8, ref symbols=(1,-2,-1,-1), dut symbols=(1,-2,-1,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 505000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x40 TX_EN=1 expected=041 got=1d6, ref symbols=(0,1,0,1), dut symbols=(0,-1,2,-2)
+UVM_ERROR pcs_scoreboard.sv(57) @ 515000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x80 TX_EN=1 expected=1f6 got=076, ref symbols=(0,-1,-2,-2), dut symbols=(0,1,-2,-2)
+UVM_ERROR pcs_scoreboard.sv(57) @ 525000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x01 TX_EN=1 expected=47f got=448, ref symbols=(2,1,-1,-1), dut symbols=(2,1,1,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 535000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x02 TX_EN=1 expected=032 got=030, ref symbols=(0,0,-2,2), dut symbols=(0,0,-2,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 545000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x04 TX_EN=1 expected=1d1 got=5c7, ref symbols=(0,-1,2,1), dut symbols=(2,-1,0,-1)
+UVM_ERROR pcs_scoreboard.sv(57) @ 555000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x08 TX_EN=1 expected=1f1 got=072, ref symbols=(0,-1,-2,1), dut symbols=(0,1,-2,2)
+UVM_ERROR pcs_scoreboard.sv(57) @ 565000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x10 TX_EN=1 expected=24a got=3ca, ref symbols=(1,1,1,2), dut symbols=(1,-1,1,2)
+UVM_ERROR pcs_scoreboard.sv(57) @ 575000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x20 TX_EN=1 expected=1f8 got=048, ref symbols=(0,-1,-1,0), dut symbols=(0,1,1,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 585000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x40 TX_EN=1 expected=dc2 got=071, ref symbols=(-2,-1,0,2), dut symbols=(0,1,-2,1)
+UVM_ERROR pcs_scoreboard.sv(57) @ 595000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x80 TX_EN=1 expected=c7f got=e10, ref symbols=(-2,1,-1,-1), dut symbols=(-1,0,2,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 605000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x01 TX_EN=1 expected=c00 got=d97, ref symbols=(-2,0,0,0), dut symbols=(-2,-2,2,-1)
+UVM_ERROR pcs_scoreboard.sv(57) @ 615000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x02 TX_EN=1 expected=07a got=078, ref symbols=(0,1,-1,2), dut symbols=(0,1,-1,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 625000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x04 TX_EN=1 expected=3c9 got=3cf, ref symbols=(1,-1,1,1), dut symbols=(1,-1,1,-1)
+UVM_ERROR pcs_scoreboard.sv(57) @ 635000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x08 TX_EN=1 expected=1bf got=00f, ref symbols=(0,-2,-1,-1), dut symbols=(0,0,1,-1)
+UVM_ERROR pcs_scoreboard.sv(57) @ 645000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x10 TX_EN=1 expected=03e got=1b8, ref symbols=(0,0,-1,-2), dut symbols=(0,-2,-1,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 655000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x20 TX_EN=1 expected=dc0 got=040, ref symbols=(-2,-1,0,0), dut symbols=(0,1,0,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 665000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x40 TX_EN=1 expected=079 got=04f, ref symbols=(0,1,-1,1), dut symbols=(0,1,1,-1)
+UVM_ERROR pcs_scoreboard.sv(57) @ 675000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x80 TX_EN=1 expected=217 got=211, ref symbols=(1,0,2,-1), dut symbols=(1,0,2,1)
+UVM_ERROR pcs_scoreboard.sv(57) @ 685000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x01 TX_EN=1 expected=dc1 got=df0, ref symbols=(-2,-1,0,1), dut symbols=(-2,-1,-2,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 695000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x02 TX_EN=1 expected=252 got=241, ref symbols=(1,1,2,2), dut symbols=(1,1,0,1)
+UVM_ERROR pcs_scoreboard.sv(57) @ 705000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x04 TX_EN=1 expected=c41 got=c70, ref symbols=(-2,1,0,1), dut symbols=(-2,1,-2,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 715000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x08 TX_EN=1 expected=e70 got=3f7, ref symbols=(-1,1,-2,0), dut symbols=(1,-1,-2,-1)
+UVM_ERROR pcs_scoreboard.sv(57) @ 725000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x10 TX_EN=1 expected=27a got=ffa, ref symbols=(1,1,-1,2), dut symbols=(-1,-1,-1,2)
+UVM_ERROR pcs_scoreboard.sv(57) @ 735000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x20 TX_EN=1 expected=c32 got=c30, ref symbols=(-2,0,-2,2), dut symbols=(-2,0,-2,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 745000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x40 TX_EN=1 expected=291 got=211, ref symbols=(1,2,2,1), dut symbols=(1,0,2,1)
+UVM_ERROR pcs_scoreboard.sv(57) @ 755000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x80 TX_EN=1 expected=200 got=287, ref symbols=(1,0,0,0), dut symbols=(1,2,0,-1)
+UVM_ERROR pcs_scoreboard.sv(57) @ 765000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=38a got=c52, ref symbols=(1,-2,1,2), dut symbols=(-2,1,2,2)
+UVM_ERROR pcs_scoreboard.sv(57) @ 785000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=c92 got=5b6, ref symbols=(-2,2,2,2), dut symbols=(2,-2,-2,-2)
+UVM_ERROR pcs_scoreboard.sv(57) @ 805000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=1b2 got=090, ref symbols=(0,-2,-2,2), dut symbols=(0,2,2,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 815000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=000 got=0b2, ref symbols=(0,0,0,0), dut symbols=(0,2,-2,2)
+UVM_ERROR pcs_scoreboard.sv(57) @ 825000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=036 got=000, ref symbols=(0,0,-2,-2), dut symbols=(0,0,0,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 845000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=c32 got=032, ref symbols=(-2,0,-2,2), dut symbols=(0,0,-2,2)
+UVM_ERROR pcs_scoreboard.sv(57) @ 855000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=480 got=086, ref symbols=(2,2,0,0), dut symbols=(0,2,0,-2)
+UVM_INFO pcs_driver.sv(30) @ 855000: uvm_test_top.env.agent_0.drv [pcs_driver] waiting for data from sequencer
+UVM_ERROR pcs_scoreboard.sv(57) @ 865000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=016 got=010, ref symbols=(0,0,2,-2), dut symbols=(0,0,2,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 875000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=180 got=030, ref symbols=(0,-2,0,0), dut symbols=(0,0,-2,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 885000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=080 got=086, ref symbols=(0,2,0,0), dut symbols=(0,2,0,-2)
+UVM_ERROR pcs_scoreboard.sv(57) @ 895000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=012 got=082, ref symbols=(0,0,2,2), dut symbols=(0,2,0,2)
+UVM_ERROR pcs_scoreboard.sv(57) @ 905000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=006 got=030, ref symbols=(0,0,0,-2), dut symbols=(0,0,-2,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 915000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=d90 got=196, ref symbols=(-2,-2,2,0), dut symbols=(0,-2,2,-2)
+UVM_ERROR pcs_scoreboard.sv(57) @ 925000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=0b0 got=000, ref symbols=(0,2,-2,0), dut symbols=(0,0,0,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 945000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=0b6 got=0b0, ref symbols=(0,2,-2,-2), dut symbols=(0,2,-2,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 955000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=000 got=086, ref symbols=(0,0,0,0), dut symbols=(0,2,0,-2)
+UVM_ERROR pcs_scoreboard.sv(57) @ 965000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=016 got=010, ref symbols=(0,0,2,-2), dut symbols=(0,0,2,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 975000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=c80 got=0b0, ref symbols=(-2,2,0,0), dut symbols=(0,2,-2,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 985000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=012 got=002, ref symbols=(0,0,2,2), dut symbols=(0,0,0,2)
+UVM_ERROR pcs_scoreboard.sv(57) @ 995000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=080 got=006, ref symbols=(0,2,0,0), dut symbols=(0,0,0,-2)
+UVM_ERROR pcs_scoreboard.sv(57) @ 1005000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=086 got=0b0, ref symbols=(0,2,0,-2), dut symbols=(0,2,-2,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 1015000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=010 got=090, ref symbols=(0,0,2,0), dut symbols=(0,2,2,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 1025000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=030 got=006, ref symbols=(0,0,-2,0), dut symbols=(0,0,0,-2)
+UVM_ERROR pcs_scoreboard.sv(57) @ 1035000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=182 got=1b2, ref symbols=(0,-2,0,2), dut symbols=(0,-2,-2,2)
+UVM_ERROR pcs_scoreboard.sv(57) @ 1045000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=016 got=000, ref symbols=(0,0,2,-2), dut symbols=(0,0,0,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 1055000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=c80 got=006, ref symbols=(-2,2,0,0), dut symbols=(0,0,0,-2)
+UVM_ERROR pcs_scoreboard.sv(57) @ 1065000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=012 got=090, ref symbols=(0,0,2,2), dut symbols=(0,2,2,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 1075000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=180 got=1b0, ref symbols=(0,-2,0,0), dut symbols=(0,-2,-2,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 1085000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=1b2 got=002, ref symbols=(0,-2,-2,2), dut symbols=(0,0,0,2)
+UVM_ERROR pcs_scoreboard.sv(57) @ 1095000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=000 got=086, ref symbols=(0,0,0,0), dut symbols=(0,2,0,-2)
+UVM_ERROR pcs_scoreboard.sv(57) @ 1105000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=436 got=030, ref symbols=(2,0,-2,-2), dut symbols=(0,0,-2,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 1115000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=180 got=1b6, ref symbols=(0,-2,0,0), dut symbols=(0,-2,-2,-2)
+UVM_ERROR pcs_scoreboard.sv(57) @ 1125000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=030 got=000, ref symbols=(0,0,-2,0), dut symbols=(0,0,0,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 1135000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=082 got=0b0, ref symbols=(0,2,0,2), dut symbols=(0,2,-2,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 1145000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=012 got=002, ref symbols=(0,0,2,2), dut symbols=(0,0,0,2)
+UVM_ERROR pcs_scoreboard.sv(57) @ 1155000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=180 got=186, ref symbols=(0,-2,0,0), dut symbols=(0,-2,0,-2)
+UVM_ERROR pcs_scoreboard.sv(57) @ 1165000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=006 got=010, ref symbols=(0,0,0,-2), dut symbols=(0,0,2,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 1175000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=d90 got=180, ref symbols=(-2,-2,2,0), dut symbols=(0,-2,0,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 1185000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=190 got=016, ref symbols=(0,-2,2,0), dut symbols=(0,0,2,-2)
+UVM_ERROR pcs_scoreboard.sv(57) @ 1195000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=002 got=080, ref symbols=(0,0,0,2), dut symbols=(0,2,0,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 1205000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=1b0 got=032, ref symbols=(0,-2,-2,0), dut symbols=(0,0,-2,2)
+UVM_ERROR pcs_scoreboard.sv(57) @ 1215000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=002 got=092, ref symbols=(0,0,0,2), dut symbols=(0,2,2,2)
+UVM_ERROR pcs_scoreboard.sv(57) @ 1225000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=010 got=000, ref symbols=(0,0,2,0), dut symbols=(0,0,0,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 1235000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=c86 got=0b0, ref symbols=(-2,2,0,-2), dut symbols=(0,2,-2,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 1245000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=410 got=006, ref symbols=(2,0,2,0), dut symbols=(0,0,0,-2)
+UVM_ERROR pcs_scoreboard.sv(57) @ 1255000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=086 got=000, ref symbols=(0,2,0,-2), dut symbols=(0,0,0,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 1265000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=082 got=092, ref symbols=(0,2,0,2), dut symbols=(0,2,2,2)
+UVM_ERROR pcs_scoreboard.sv(57) @ 1275000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=010 got=000, ref symbols=(0,0,2,0), dut symbols=(0,0,0,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 1285000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=010 got=096, ref symbols=(0,0,2,0), dut symbols=(0,2,2,-2)
+UVM_ERROR pcs_scoreboard.sv(57) @ 1295000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=186 got=1b0, ref symbols=(0,-2,0,-2), dut symbols=(0,-2,-2,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 1305000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=000 got=006, ref symbols=(0,0,0,0), dut symbols=(0,0,0,-2)
+UVM_ERROR pcs_scoreboard.sv(57) @ 1315000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=0b2 got=002, ref symbols=(0,2,-2,2), dut symbols=(0,0,0,2)
+UVM_ERROR pcs_scoreboard.sv(57) @ 1325000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=1b2 got=1b0, ref symbols=(0,-2,-2,2), dut symbols=(0,-2,-2,0)
+UVM_ERROR pcs_scoreboard.sv(57) @ 1335000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=000 got=0b2, ref symbols=(0,0,0,0), dut symbols=(0,2,-2,2)
+UVM_ERROR pcs_scoreboard.sv(57) @ 1345000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] MISMATCH: Din=0x00 TX_EN=0 expected=032 got=000, ref symbols=(0,0,-2,2), dut symbols=(0,0,0,0)
+UVM_INFO /home/morris/uvm-1.2/src/base/uvm_objection.svh(1270) @ 1355000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO pcs_scoreboard.sv(103) @ 1355000: uvm_test_top.env.sb_0 [PCS_SB] PCS[0] SCOREBOARD RESULT: PASS=6 FAIL=123
+UVM_INFO /home/morris/uvm-1.2/src/base/uvm_report_server.svh(847) @ 1355000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   12
+UVM_WARNING :    0
+UVM_ERROR :  123
+UVM_FATAL :    0
+** Report counts by id
+[ENV]     1
+[PCS_SB]   129
+[RNTST]     1
+[TEST_DONE]     1
+[UVM/RELNOTES]     1
+[pcs_driver]     2
+
+$finish called from file "/home/morris/uvm-1.2/src/base/uvm_root.svh", line 517.
+$finish at simulation time              1355000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 1355000 ps
+CPU Time:      0.520 seconds;       Data structure size:   0.1Mb
+Mon Nov 16 01:15:34 2026

@@ -6,3 +6,43 @@
   CREATE_STREAM @0 {NAME:seq T:Transactions SCOPE:uvm_test_top.env.agent[0].seqr STREAM:614}
   CREATE_STREAM @0 {NAME:seq T:Transactions SCOPE:uvm_test_top.env.agent[0].seqr STREAM:615}
   CREATE_STREAM @0 {NAME:seq T:Transactions SCOPE:uvm_test_top.env.agent[0].seqr STREAM:614}
+  CREATE_STREAM @0 {NAME:vseq_0 T:Transactions SCOPE:uvm_test_top.env.vseqr STREAM:766}
+  CREATE_STREAM @95000 {NAME:seq_0 T:Transactions SCOPE:uvm_test_top.env.agent_0.seqr STREAM:880}
+  CREATE_STREAM @10595000 {NAME:seq_1 T:Transactions SCOPE:uvm_test_top.env.agent_0.seqr STREAM:7686}
+  CREATE_STREAM @464635000 {NAME:seq_2 T:Transactions SCOPE:uvm_test_top.env.agent_0.seqr STREAM:280276}
+  CREATE_STREAM @95000 {NAME:s T:Transactions SCOPE:uvm_test_top.env.agent_0.seqr STREAM:861}
+  CREATE_STREAM @95000 {NAME:s T:Transactions SCOPE:uvm_test_top.env.agent_0.seqr STREAM:861}
+  CREATE_STREAM @95000 {NAME:s T:Transactions SCOPE:uvm_test_top.env.agent_0.seqr STREAM:861}
+  CREATE_STREAM @95000 {NAME:s T:Transactions SCOPE:uvm_test_top.env.agent_0.seqr STREAM:861}
+  CREATE_STREAM @95000 {NAME:s T:Transactions SCOPE:uvm_test_top.env.agent_0.seqr STREAM:861}
+  CREATE_STREAM @95000 {NAME:s T:Transactions SCOPE:uvm_test_top.env.agent_0.seqr STREAM:861}
+  CREATE_STREAM @95000 {NAME:s T:Transactions SCOPE:uvm_test_top.env.agent_0.seqr STREAM:861}
+  CREATE_STREAM @95000 {NAME:s T:Transactions SCOPE:uvm_test_top.env.agent_0.seqr STREAM:861}
+  CREATE_STREAM @95000 {NAME:s T:Transactions SCOPE:uvm_test_top.env.agent_0.seqr STREAM:861}
+  CREATE_STREAM @0 {NAME:vseq_0 T:Transactions SCOPE:uvm_test_top.env.vseqr STREAM:766}
+  CREATE_STREAM @95000 {NAME:seq_0 T:Transactions SCOPE:uvm_test_top.env.agent_0.seqr STREAM:880}
+  CREATE_STREAM @11025000 {NAME:seq_1 T:Transactions SCOPE:uvm_test_top.env.agent_0.seqr STREAM:7986}
+  CREATE_STREAM @21575000 {NAME:seq_2 T:Transactions SCOPE:uvm_test_top.env.agent_0.seqr STREAM:14836}
+  CREATE_STREAM @427995000 {NAME:seq_3 T:Transactions SCOPE:uvm_test_top.env.agent_0.seqr STREAM:258862}
+  CREATE_STREAM @95000 {NAME:s T:Transactions SCOPE:uvm_test_top.env.agent_0.seqr STREAM:861}
+  CREATE_STREAM @95000 {NAME:s T:Transactions SCOPE:uvm_test_top.env.agent_0.seqr STREAM:861}
+  CREATE_STREAM @95000 {NAME:s T:Transactions SCOPE:uvm_test_top.env.agent_0.seqr STREAM:861}
+  CREATE_STREAM @95000 {NAME:s T:Transactions SCOPE:uvm_test_top.env.agent_0.seqr STREAM:861}
+  CREATE_STREAM @95000 {NAME:s T:Transactions SCOPE:uvm_test_top.env.agent_0.seqr STREAM:861}
+  CREATE_STREAM @95000 {NAME:s T:Transactions SCOPE:uvm_test_top.env.agent_0.seqr STREAM:861}
+  CREATE_STREAM @95000 {NAME:s T:Transactions SCOPE:uvm_test_top.env.agent_0.seqr STREAM:861}
+  CREATE_STREAM @95000 {NAME:s T:Transactions SCOPE:uvm_test_top.env.agent_0.seqr STREAM:861}
+  CREATE_STREAM @95000 {NAME:s T:Transactions SCOPE:uvm_test_top.env.agent_0.seqr STREAM:861}
+  CREATE_STREAM @0 {NAME:vseq_0 T:Transactions SCOPE:uvm_test_top.env.vseqr STREAM:766}
+  CREATE_STREAM @95000 {NAME:seq_0 T:Transactions SCOPE:uvm_test_top.env.agent_0.seqr STREAM:880}
+  CREATE_STREAM @13205000 {NAME:seq_1 T:Transactions SCOPE:uvm_test_top.env.agent_0.seqr STREAM:9312}
+  CREATE_STREAM @314195000 {NAME:seq_2 T:Transactions SCOPE:uvm_test_top.env.agent_0.seqr STREAM:190226}
+  CREATE_STREAM @95000 {NAME:s T:Transactions SCOPE:uvm_test_top.env.agent_0.seqr STREAM:861}
+  CREATE_STREAM @95000 {NAME:s T:Transactions SCOPE:uvm_test_top.env.agent_0.seqr STREAM:861}
+  CREATE_STREAM @95000 {NAME:s T:Transactions SCOPE:uvm_test_top.env.agent_0.seqr STREAM:861}
+  CREATE_STREAM @95000 {NAME:s T:Transactions SCOPE:uvm_test_top.env.agent_0.seqr STREAM:861}
+  CREATE_STREAM @95000 {NAME:s T:Transactions SCOPE:uvm_test_top.env.agent_0.seqr STREAM:861}
+  CREATE_STREAM @95000 {NAME:s T:Transactions SCOPE:uvm_test_top.env.agent_0.seqr STREAM:861}
+  CREATE_STREAM @95000 {NAME:s T:Transactions SCOPE:uvm_test_top.env.agent_0.seqr STREAM:861}
+  CREATE_STREAM @95000 {NAME:s T:Transactions SCOPE:uvm_test_top.env.agent_0.seqr STREAM:861}
+  CREATE_STREAM @95000 {NAME:s T:Transactions SCOPE:uvm_test_top.env.agent_0.seqr STREAM:861}

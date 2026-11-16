@@ -78,12 +78,6 @@ typedef struct VeriC_Descriptor *vc_handle;
  extern unsigned int pcs_dpi_dut0_step(/* INPUT */unsigned int din, /* INPUT */unsigned int tx_en);
 
  extern void pcs_dpi_dut0_step_debug(/* INPUT */unsigned int din, /* INPUT */unsigned int tx_en, /* OUTPUT */unsigned int *dout12, /* OUTPUT */unsigned int *sc, /* OUTPUT */unsigned int *sd, /* OUTPUT */unsigned int *condition, /* OUTPUT */unsigned int *state);
-
- extern void* svapfGetAttempt(/* INPUT */unsigned int assertHandle);
-
- extern void svapfReportResult(/* INPUT */unsigned int assertHandle, /* INPUT */void* ptrAttempt, /* INPUT */int result);
-
- extern int svapfGetAssertEnabled(/* INPUT */unsigned int assertHandle);
 void SdisableFork();
 
 #ifdef __cplusplus

@@ -29,29 +29,23 @@
         "module",
         5
     ],
-    "DUTS26_0": [
-        "DUTS26_0",
-        "kn4Sv",
-        "module",
-        8
-    ],
     "pcs_tx_rm_dpi_pkg": [
         "pcs_tx_rm_dpi_pkg",
         "zTsPh",
         "module",
-        7
+        8
     ],
     "pcs_if": [
         "pcs_if",
         "MDNfU",
         "module",
-        6
+        7
     ],
     "top": [
         "top",
         "Emx8S",
         "module",
-        3
+        6
     ],
     "...MASTER...": [
         "SIM",

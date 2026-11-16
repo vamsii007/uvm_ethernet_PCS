@@ -31,7 +31,7 @@ TMPSPECENV=$(VCSTMPSPECENV)
 CC=$(TMPSPECENV) $(VCS_CC) $(TMPSPECARG)
 
 # C flags for compilation
-CFLAGS=$(STDLIB)-w  -pipe -m32 -DVCS -O -I/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/include    
+CFLAGS=$(STDLIB)-w  -pipe -m32 -DVCS -std=c99 -O -I/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/include    
 
 CFLAGS_CG=-w  -pipe -m32 -I/apps/synopsys/vcs_2023/vcs/U-2023.03-SP2-8/include -O  -fno-strict-aliasing -fno-optimize-sibling-calls   
 
