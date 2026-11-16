@@ -19,6 +19,8 @@ import uvm_pkg::*;
 `include "pcs_sequence.sv"
 `include "pcs_random_reset_vseq.sv"
 `include "pcs_test.sv"
+`include "pcs_directed_seqs.svh"    
+`include "pcs_directed_tests.svh"   
 
 
 module top;

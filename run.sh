@@ -10,4 +10,10 @@ vcs -sverilog -ntb_opts uvm \
   -debug_access+all \
   -l compile.log
 
-./simv +UVM_TESTNAME=pcs_test -l sim.log
+TESTS=${@:-"pcs_test pcs_test_min pcs_test_max pcs_test_all_zeros pcs_test_all_ones \
+pcs_test_walking_ones pcs_test_walking_zeros pcs_test_alt_55_aa pcs_test_same_byte pcs_test_btb"}
+
+for t in $TESTS; do
+  ./simv +UVM_TESTNAME=$t +ntb_random_seed_automatic -l sim_$t.log
+  echo "$t: $(grep -E '^UVM_(ERROR|FATAL) :' sim_$t.log | tr '\n' ' ')"
+done

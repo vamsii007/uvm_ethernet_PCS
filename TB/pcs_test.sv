@@ -17,6 +17,14 @@ class pcs_test extends uvm_test;
     env = pcs_env::type_id::create("env", this);
   endfunction
 
+task apply_reset();
+  virtual pcs_if v = env.vseqr.vif[0];
+  v.cb_dr.rst_n <= 1'b0;
+  repeat (5) @(v.cb_dr);
+  v.cb_dr.rst_n <= 1'b1;
+  repeat (5) @(v.cb_dr);
+endtask
+
   task run_phase(uvm_phase phase);
 
   pcs_random_reset_vseq vseq;
